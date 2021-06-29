@@ -197,7 +197,7 @@ class systolicTest extends FlatSpec with ChiselScalatestTester with Matchers {
         }
       }
     }
-  }
+  
 }
 
 //object systolicTest extends App {
