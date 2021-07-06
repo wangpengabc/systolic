@@ -1,0 +1,18 @@
+{
+    "value": [
+        {
+            "analysisFile": "/home/wangpeng/test/playground_test/out/foreign-modules/dependencies/firrtl/firrtlCrossModule/compile/dest/zinc",
+            "classes": "ref:5d379fb9:/home/wangpeng/test/playground_test/out/foreign-modules/dependencies/firrtl/firrtlCrossModule/compile/dest/classes"
+        },
+        {
+            "analysisFile": "/home/wangpeng/test/playground_test/out/foreign-modules/dependencies/chisel3/chisel3CrossModule/macros/compile/dest/zinc",
+            "classes": "ref:e9badbe2:/home/wangpeng/test/playground_test/out/foreign-modules/dependencies/chisel3/chisel3CrossModule/macros/compile/dest/classes"
+        },
+        {
+            "analysisFile": "/home/wangpeng/test/playground_test/out/foreign-modules/dependencies/chisel3/chisel3CrossModule/core/compile/dest/zinc",
+            "classes": "ref:5bd0fc27:/home/wangpeng/test/playground_test/out/foreign-modules/dependencies/chisel3/chisel3CrossModule/core/compile/dest/classes"
+        }
+    ],
+    "valueHash": -425850313,
+    "inputsHash": 1414694879
+}

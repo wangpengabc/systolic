@@ -1,0 +1,8 @@
+{
+    "value": [
+        "ref:991c5609:/home/wangpeng/test/playground_test/dependencies/chisel3/core/src/main/scala",
+        "ref:c984eca8:/home/wangpeng/test/playground_test/dependencies/chisel3/core/src/main/java"
+    ],
+    "valueHash": 18726536,
+    "inputsHash": 731831706
+}

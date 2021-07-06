@@ -1,0 +1,10 @@
+[
+  {
+    "class":"firrtl.EmitCircuitAnnotation",
+    "emitter":"firrtl.VerilogEmitter"
+  },
+  {
+    "class":"firrtl.transforms.BlackBoxTargetDirAnno",
+    "targetDir":"/home/wangpeng/test/playground_test/test_run_dir/LFSRMaxPeriod/2021070521344211934615200766540581"
+  }
+]

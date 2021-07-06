@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/chisel3CrossModule.iml" filepath="$PROJECT_DIR$/.idea/modules/chisel3CrossModule.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/chisel3CrossModule.core.iml" filepath="$PROJECT_DIR$/.idea/modules/chisel3CrossModule.core.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/chisel3CrossModule.macros.iml" filepath="$PROJECT_DIR$/.idea/modules/chisel3CrossModule.macros.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/chisel3CrossModule.plugin.iml" filepath="$PROJECT_DIR$/.idea/modules/chisel3CrossModule.plugin.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/chisel3CrossModule.test.iml" filepath="$PROJECT_DIR$/.idea/modules/chisel3CrossModule.test.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/chiseltestCrossModule.iml" filepath="$PROJECT_DIR$/.idea/modules/chiseltestCrossModule.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/chiseltestCrossModule.test.iml" filepath="$PROJECT_DIR$/.idea/modules/chiseltestCrossModule.test.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/firrtlCrossModule.iml" filepath="$PROJECT_DIR$/.idea/modules/firrtlCrossModule.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/firrtlCrossModule.test.iml" filepath="$PROJECT_DIR$/.idea/modules/firrtlCrossModule.test.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/mill-build.iml" filepath="$PROJECT_DIR$/.idea/modules/mill-build.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/systolic.iml" filepath="$PROJECT_DIR$/.idea/modules/systolic.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/systolic.test.iml" filepath="$PROJECT_DIR$/.idea/modules/systolic.test.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/treadleCrossModule.iml" filepath="$PROJECT_DIR$/.idea/modules/treadleCrossModule.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/treadleCrossModule.test.iml" filepath="$PROJECT_DIR$/.idea/modules/treadleCrossModule.test.iml" />
+    </modules>
+  </component>
+</project>

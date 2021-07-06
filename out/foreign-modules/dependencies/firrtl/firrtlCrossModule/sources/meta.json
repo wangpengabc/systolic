@@ -1,0 +1,11 @@
+{
+    "value": [
+        "ref:8fd0ed19:/home/wangpeng/test/playground_test/dependencies/firrtl/src/main/scala",
+        "ref:c984eca8:/home/wangpeng/test/playground_test/dependencies/firrtl/src/main/java",
+        "ref:c984eca8:/home/wangpeng/test/playground_test/dependencies/firrtl/src/main/scala-2.12.13",
+        "ref:c984eca8:/home/wangpeng/test/playground_test/dependencies/firrtl/src/main/scala-2.12",
+        "ref:c984eca8:/home/wangpeng/test/playground_test/dependencies/firrtl/src/main/scala-2"
+    ],
+    "valueHash": -847038351,
+    "inputsHash": -1062949998
+}

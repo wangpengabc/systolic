@@ -1,0 +1,8 @@
+{
+    "value": [
+        "ref:1e9cc12e:/home/wangpeng/test/playground_test/dependencies/firrtl/src/main/resources",
+        "ref:5d379fb9:/home/wangpeng/test/playground_test/out/foreign-modules/dependencies/firrtl/firrtlCrossModule/compile/dest/classes"
+    ],
+    "valueHash": 2077516007,
+    "inputsHash": 1655630813
+}

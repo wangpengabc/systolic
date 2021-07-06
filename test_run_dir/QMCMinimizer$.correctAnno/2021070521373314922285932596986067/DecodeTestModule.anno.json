@@ -1,0 +1,640 @@
+[
+  {
+    "class":"firrtl.backends.experimental.smt.TransitionSystemAnnotation",
+    "sys":{
+      "name":"DecodeTestModule",
+      "inputs":[
+        {
+          "name":"reset",
+          "width":1
+        },
+        {
+          "name":"i",
+          "width":2
+        }
+      ],
+      "states":[
+        
+      ],
+      "signals":[
+        {
+          "name":"minimizedO_plaInput",
+          "e":{
+            "name":"i",
+            "width":2
+          }
+        },
+        {
+          "name":"minimizedO_invInputs",
+          "e":{
+            "e":{
+              "name":"minimizedO_plaInput",
+              "width":2
+            }
+          }
+        },
+        {
+          "name":"minimizedO_hi",
+          "e":{
+            "e":{
+              "name":"minimizedO_plaInput",
+              "width":2
+            },
+            "hi":0,
+            "lo":0
+          }
+        },
+        {
+          "name":"minimizedO_lo",
+          "e":{
+            "e":{
+              "name":"minimizedO_invInputs",
+              "width":2
+            },
+            "hi":1,
+            "lo":1
+          }
+        },
+        {
+          "name":"_minimizedO_T",
+          "e":{
+            "a":{
+              "name":"minimizedO_hi",
+              "width":1
+            },
+            "b":{
+              "name":"minimizedO_lo",
+              "width":1
+            }
+          }
+        },
+        {
+          "name":"minimizedO_orMatrixOutputs_hi",
+          "e":{
+            "e":{
+              "name":"_minimizedO_T",
+              "width":2
+            }
+          }
+        },
+        {
+          "name":"minimizedO_hi_1",
+          "e":{
+            "e":{
+              "name":"minimizedO_invInputs",
+              "width":2
+            },
+            "hi":0,
+            "lo":0
+          }
+        },
+        {
+          "name":"minimizedO_lo_1",
+          "e":{
+            "e":{
+              "name":"minimizedO_plaInput",
+              "width":2
+            },
+            "hi":1,
+            "lo":1
+          }
+        },
+        {
+          "name":"_minimizedO_T_1",
+          "e":{
+            "a":{
+              "name":"minimizedO_hi_1",
+              "width":1
+            },
+            "b":{
+              "name":"minimizedO_lo_1",
+              "width":1
+            }
+          }
+        },
+        {
+          "name":"minimizedO_orMatrixOutputs_lo",
+          "e":{
+            "e":{
+              "name":"_minimizedO_T_1",
+              "width":2
+            }
+          }
+        },
+        {
+          "name":"_minimizedO_orMatrixOutputs_T",
+          "e":{
+            "a":{
+              "name":"minimizedO_orMatrixOutputs_hi",
+              "width":1
+            },
+            "b":{
+              "name":"minimizedO_orMatrixOutputs_lo",
+              "width":1
+            }
+          }
+        },
+        {
+          "name":"minimizedO_orMatrixOutputs",
+          "e":{
+            "e":{
+              "name":"_minimizedO_orMatrixOutputs_T",
+              "width":2
+            }
+          }
+        },
+        {
+          "name":"minimizedO_invMatrixOutputs",
+          "e":{
+            "e":{
+              "name":"minimizedO_orMatrixOutputs",
+              "width":1
+            },
+            "hi":0,
+            "lo":0
+          }
+        },
+        {
+          "name":"_T_2",
+          "e":{
+            "op":{
+              
+            },
+            "a":{
+              "name":"i",
+              "width":2
+            },
+            "b":{
+              "value":3,
+              "width":2
+            }
+          }
+        },
+        {
+          "name":"_T_3",
+          "e":{
+            "a":{
+              "value":2,
+              "width":2
+            },
+            "b":{
+              "name":"_T_2",
+              "width":2
+            }
+          }
+        },
+        {
+          "name":"minimizedO",
+          "e":{
+            "name":"minimizedO_invMatrixOutputs",
+            "width":1
+          }
+        },
+        {
+          "name":"_T_4",
+          "e":{
+            "op":{
+              
+            },
+            "a":{
+              "name":"minimizedO",
+              "width":1
+            },
+            "b":{
+              "value":1,
+              "width":1
+            }
+          }
+        },
+        {
+          "name":"_T_5",
+          "e":{
+            "a":{
+              "value":1,
+              "width":1
+            },
+            "b":{
+              "name":"_T_4",
+              "width":1
+            }
+          }
+        },
+        {
+          "name":"_T_6",
+          "e":{
+            "op":{
+              
+            },
+            "a":{
+              "name":"_T_3",
+              "width":1
+            },
+            "b":{
+              "name":"_T_5",
+              "width":1
+            }
+          }
+        },
+        {
+          "name":"_T_7",
+          "e":{
+            "op":{
+              
+            },
+            "a":{
+              "name":"i",
+              "width":2
+            },
+            "b":{
+              "value":3,
+              "width":2
+            }
+          }
+        },
+        {
+          "name":"_T_8",
+          "e":{
+            "a":{
+              "e":{
+                "value":1,
+                "width":1
+              },
+              "by":1,
+              "signed":false
+            },
+            "b":{
+              "name":"_T_7",
+              "width":2
+            }
+          }
+        },
+        {
+          "name":"_T_9",
+          "e":{
+            "op":{
+              
+            },
+            "a":{
+              "name":"minimizedO",
+              "width":1
+            },
+            "b":{
+              "value":1,
+              "width":1
+            }
+          }
+        },
+        {
+          "name":"_T_10",
+          "e":{
+            "a":{
+              "value":1,
+              "width":1
+            },
+            "b":{
+              "name":"_T_9",
+              "width":1
+            }
+          }
+        },
+        {
+          "name":"_T_11",
+          "e":{
+            "op":{
+              
+            },
+            "a":{
+              "name":"_T_8",
+              "width":1
+            },
+            "b":{
+              "name":"_T_10",
+              "width":1
+            }
+          }
+        },
+        {
+          "name":"_T_12",
+          "e":{
+            "op":{
+              
+            },
+            "a":{
+              "name":"i",
+              "width":2
+            },
+            "b":{
+              "value":3,
+              "width":2
+            }
+          }
+        },
+        {
+          "name":"_T_13",
+          "e":{
+            "a":{
+              "value":2,
+              "width":2
+            },
+            "b":{
+              "name":"_T_12",
+              "width":2
+            }
+          }
+        },
+        {
+          "name":"_T_14",
+          "e":{
+            "a":{
+              "name":"_T_13",
+              "width":1
+            },
+            "b":{
+              "value":0,
+              "width":1
+            }
+          }
+        },
+        {
+          "name":"_T_15",
+          "e":{
+            "op":{
+              
+            },
+            "a":{
+              "name":"i",
+              "width":2
+            },
+            "b":{
+              "value":3,
+              "width":2
+            }
+          }
+        },
+        {
+          "name":"_T_16",
+          "e":{
+            "a":{
+              "e":{
+                "value":1,
+                "width":1
+              },
+              "by":1,
+              "signed":false
+            },
+            "b":{
+              "name":"_T_15",
+              "width":2
+            }
+          }
+        },
+        {
+          "name":"_T_17",
+          "e":{
+            "a":{
+              "name":"_T_16",
+              "width":1
+            },
+            "b":{
+              "value":0,
+              "width":1
+            }
+          }
+        },
+        {
+          "name":"_T_18",
+          "e":{
+            "op":{
+              
+            },
+            "a":{
+              "name":"_T_14",
+              "width":1
+            },
+            "b":{
+              "name":"_T_17",
+              "width":1
+            }
+          }
+        },
+        {
+          "name":"_T_19",
+          "e":{
+            "op":{
+              
+            },
+            "a":{
+              "name":"minimizedO",
+              "width":1
+            },
+            "b":{
+              "value":1,
+              "width":1
+            }
+          }
+        },
+        {
+          "name":"_T_20",
+          "e":{
+            "a":{
+              "value":0,
+              "width":1
+            },
+            "b":{
+              "name":"_T_19",
+              "width":1
+            }
+          }
+        },
+        {
+          "name":"_T_21",
+          "e":{
+            "op":{
+              
+            },
+            "a":{
+              "name":"_T_18",
+              "width":1
+            },
+            "b":{
+              "name":"_T_20",
+              "width":1
+            }
+          }
+        },
+        {
+          "name":"_T_22",
+          "e":{
+            "op":{
+              
+            },
+            "a":{
+              "name":"_T_6",
+              "width":1
+            },
+            "b":{
+              "name":"_T_11",
+              "width":1
+            }
+          }
+        },
+        {
+          "name":"_T_23",
+          "e":{
+            "op":{
+              
+            },
+            "a":{
+              "name":"_T_22",
+              "width":1
+            },
+            "b":{
+              "name":"_T_21",
+              "width":1
+            }
+          }
+        },
+        {
+          "name":"_T_24",
+          "e":{
+            "e":{
+              "name":"reset",
+              "width":1
+            },
+            "hi":0,
+            "lo":0
+          }
+        },
+        {
+          "name":"_T_25",
+          "e":{
+            "a":{
+              "name":"_T_24",
+              "width":1
+            },
+            "b":{
+              "value":0,
+              "width":1
+            }
+          }
+        },
+        {
+          "name":"SIM",
+          "e":{
+            "a":{
+              "op":{
+                
+              },
+              "a":{
+                "op":{
+                  
+                },
+                "a":{
+                  "value":1,
+                  "width":1
+                },
+                "b":{
+                  "name":"_T_25",
+                  "width":1
+                }
+              },
+              "b":{
+                "value":1,
+                "width":1
+              }
+            },
+            "b":{
+              "name":"_T_23",
+              "width":1
+            }
+          }
+        }
+      ],
+      "outputs":[
+        
+      ],
+      "assumes":[
+        
+      ],
+      "asserts":[
+        "SIM"
+      ],
+      "fair":[
+        
+      ],
+      "ufs":[
+        
+      ],
+      "comments":{
+        "_T_17":"@ MinimizerSpec.scala 20:34",
+        "minimizedO_orMatrixOutputs_hi":"@ pla.scala 84:13",
+        "_T_9":"@ MinimizerSpec.scala 19:72",
+        "_T_24":"@ MinimizerSpec.scala 17:43",
+        "_T_20":"@ MinimizerSpec.scala 20:70",
+        "_T_3":"@ MinimizerSpec.scala 19:48",
+        "minimizedO_plaInput":"@ decoder.scala 30:16, pla.scala 62:22",
+        "_T_13":"@ MinimizerSpec.scala 20:34",
+        "_T_19":"@ MinimizerSpec.scala 20:70",
+        "_minimizedO_T_1":"@ Cat.scala 30:58",
+        "minimizedO":"@ pla.scala 115:13 66:23",
+        "_T_14":"@ MinimizerSpec.scala 20:34",
+        "minimizedO_orMatrixOutputs":"@ pla.scala 100:41",
+        "_T_25":"@ MinimizerSpec.scala 17:43",
+        "minimizedO_lo":"@ pla.scala 77:31",
+        "_T_4":"@ MinimizerSpec.scala 19:72",
+        "_minimizedO_T":"@ Cat.scala 30:58",
+        "_T_6":"@ MinimizerSpec.scala 19:57",
+        "_T_12":"@ MinimizerSpec.scala 20:34",
+        "_T_15":"@ MinimizerSpec.scala 20:34",
+        "minimizedO_orMatrixOutputs_lo":"@ pla.scala 84:13",
+        "_T_2":"@ MinimizerSpec.scala 19:48",
+        "_T_7":"@ MinimizerSpec.scala 19:48",
+        "_T_21":"@ MinimizerSpec.scala 20:56",
+        "_T_10":"@ MinimizerSpec.scala 19:72",
+        "_T_11":"@ MinimizerSpec.scala 19:57",
+        "_T_22":"@ MinimizerSpec.scala 20:99",
+        "_T_5":"@ MinimizerSpec.scala 19:72",
+        "_T_18":"@ MinimizerSpec.scala 20:50",
+        "minimizedO_invMatrixOutputs":"@ pla.scala 110:56",
+        "_T_16":"@ MinimizerSpec.scala 20:34",
+        "_minimizedO_orMatrixOutputs_T":"@ Cat.scala 30:58",
+        "_T_23":"@ MinimizerSpec.scala 20:99",
+        "_T_8":"@ MinimizerSpec.scala 19:48",
+        "minimizedO_hi":"@ pla.scala 76:47",
+        "SIM":"@ MinimizerSpec.scala 17:43",
+        "minimizedO_lo_1":"@ pla.scala 76:47",
+        "minimizedO_invInputs":"@ pla.scala 63:21",
+        "minimizedO_hi_1":"@ pla.scala 77:31"
+      },
+      "header":[
+        
+      ]
+    }
+  },
+  {
+    "class":"firrtl.EmitCircuitAnnotation",
+    "emitter":"firrtl.backends.experimental.smt.SMTLibEmitter"
+  },
+  {
+    "class":"chisel3.util.experimental.decode.DecodeTableAnnotation",
+    "target":"~|>",
+    "truthTable":"10->1\n01->1\n    0",
+    "minimizedTable":"    0\n01->1\n10->1"
+  },
+  {
+    "class":"chisel3.util.experimental.decode.DecodeTableAnnotation",
+    "target":"~DecodeTestModule|DecodeTestModule>minimizedO",
+    "truthTable":"    0\n01->1\n10->1",
+    "minimizedTable":"    0\n01->1\n10->1"
+  },
+  {
+    "class":"logger.LogLevelAnnotation",
+    "globalLogLevel":{
+      
+    }
+  },
+  {
+    "class":"firrtl.transforms.BlackBoxTargetDirAnno",
+    "targetDir":"/home/wangpeng/test/playground_test/test_run_dir/QMCMinimizer$.correctAnno/2021070521373314922285932596986067"
+  }
+]

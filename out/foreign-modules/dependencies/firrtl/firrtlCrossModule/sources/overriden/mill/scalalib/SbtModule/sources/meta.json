@@ -1,0 +1,8 @@
+{
+    "value": [
+        "ref:8fd0ed19:/home/wangpeng/test/playground_test/dependencies/firrtl/src/main/scala",
+        "ref:c984eca8:/home/wangpeng/test/playground_test/dependencies/firrtl/src/main/java"
+    ],
+    "valueHash": 1137423768,
+    "inputsHash": -1897783081
+}

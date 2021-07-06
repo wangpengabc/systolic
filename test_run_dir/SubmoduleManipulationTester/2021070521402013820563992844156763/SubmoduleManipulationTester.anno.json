@@ -1,0 +1,20 @@
+[
+  {
+    "class":"firrtl.transforms.DedupedResult",
+    "original":"~SubmoduleManipulationTester|SubmoduleA",
+    "index":-1.0
+  },
+  {
+    "class":"firrtl.transforms.DedupedResult",
+    "original":"~SubmoduleManipulationTester|SubmoduleA_1",
+    "index":-1.0
+  },
+  {
+    "class":"firrtl.EmitCircuitAnnotation",
+    "emitter":"firrtl.VerilogEmitter"
+  },
+  {
+    "class":"firrtl.transforms.BlackBoxTargetDirAnno",
+    "targetDir":"/home/wangpeng/test/playground_test/test_run_dir/SubmoduleManipulationTester/2021070521402013820563992844156763"
+  }
+]

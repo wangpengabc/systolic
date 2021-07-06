@@ -1,0 +1,22 @@
+[
+  {
+    "class":"firrtl.transforms.DedupedResult",
+    "original":"~ExtModuleTester|BlackBoxInverter",
+    "duplicate":"~ExtModuleTester|ExtModuleTester/blackBoxPos:BlackBoxInverter",
+    "index":0.0
+  },
+  {
+    "class":"firrtl.transforms.DedupedResult",
+    "original":"~ExtModuleTester|BlackBoxInverter_1",
+    "duplicate":"~ExtModuleTester|ExtModuleTester/blackBoxNeg:BlackBoxInverter",
+    "index":0.5
+  },
+  {
+    "class":"firrtl.EmitCircuitAnnotation",
+    "emitter":"firrtl.VerilogEmitter"
+  },
+  {
+    "class":"firrtl.transforms.BlackBoxTargetDirAnno",
+    "targetDir":"/home/wangpeng/test/playground_test/test_run_dir/ExtModuleTester/2021070521385310194322631337505095"
+  }
+]

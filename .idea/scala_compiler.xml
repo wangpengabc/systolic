@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ScalaCompilerConfiguration">
+    <profile name="bsp 1" modules="chisel3CrossModule,chisel3CrossModule.macros,chisel3CrossModule.test,treadleCrossModule,treadleCrossModule.test">
+      <option name="deprecationWarnings" value="true" />
+      <option name="featureWarnings" value="true" />
+    </profile>
+    <profile name="bsp 2" modules="chisel3CrossModule.core">
+      <option name="reflectiveCalls" value="true" />
+      <option name="deprecationWarnings" value="true" />
+      <option name="uncheckedWarnings" value="true" />
+      <option name="featureWarnings" value="true" />
+      <option name="explainTypeErrors" value="true" />
+      <parameters>
+        <parameter value="-Xcheckinit" />
+        <parameter value="-Xlint:infer-any" />
+      </parameters>
+    </profile>
+    <profile name="bsp 3" modules="mill-build,systolic,systolic.test" />
+    <profile name="bsp 4" modules="chisel3CrossModule.plugin">
+      <parameters>
+        <parameter value="-Xfatal-warnings" />
+      </parameters>
+    </profile>
+    <profile name="bsp 5" modules="firrtlCrossModule,firrtlCrossModule.test">
+      <option name="deprecationWarnings" value="true" />
+      <option name="uncheckedWarnings" value="true" />
+      <parameters>
+        <parameter value="-Yrangepos" />
+      </parameters>
+    </profile>
+    <profile name="bsp 6" modules="chiseltestCrossModule,chiseltestCrossModule.test">
+      <option name="reflectiveCalls" value="true" />
+      <option name="deprecationWarnings" value="true" />
+      <option name="featureWarnings" value="true" />
+    </profile>
+  </component>
+</project>

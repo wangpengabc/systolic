@@ -1,0 +1,20 @@
+{
+    "value": [
+        "ref:c984eca8:/home/wangpeng/test/playground_test/systolic/resources",
+        "ref:65250bac:/home/wangpeng/test/playground_test/out/systolic/compile/dest/classes",
+        "ref:1ff9c503:/home/wangpeng/test/playground_test/dependencies/chisel3/src/main/resources",
+        "ref:fcca79b1:/home/wangpeng/test/playground_test/out/foreign-modules/dependencies/chisel3/chisel3CrossModule/compile/dest/classes",
+        "ref:1e9cc12e:/home/wangpeng/test/playground_test/dependencies/firrtl/src/main/resources",
+        "ref:5d379fb9:/home/wangpeng/test/playground_test/out/foreign-modules/dependencies/firrtl/firrtlCrossModule/compile/dest/classes",
+        "ref:c984eca8:/home/wangpeng/test/playground_test/dependencies/chisel3/macros/src/main/resources",
+        "ref:e9badbe2:/home/wangpeng/test/playground_test/out/foreign-modules/dependencies/chisel3/chisel3CrossModule/macros/compile/dest/classes",
+        "ref:c984eca8:/home/wangpeng/test/playground_test/dependencies/chisel3/core/src/main/resources",
+        "ref:5bd0fc27:/home/wangpeng/test/playground_test/out/foreign-modules/dependencies/chisel3/chisel3CrossModule/core/compile/dest/classes",
+        "ref:3e6bbc31:/home/wangpeng/test/playground_test/dependencies/chisel-testers2/src/main/resources",
+        "ref:224329ac:/home/wangpeng/test/playground_test/out/foreign-modules/dependencies/chisel-testers2/chiseltestCrossModule/compile/dest/classes",
+        "ref:ce346a90:/home/wangpeng/test/playground_test/dependencies/treadle/src/main/resources",
+        "ref:58561c71:/home/wangpeng/test/playground_test/out/foreign-modules/dependencies/treadle/treadleCrossModule/compile/dest/classes"
+    ],
+    "valueHash": 655472166,
+    "inputsHash": -1083573443
+}

@@ -1,0 +1,9 @@
+{
+    "value": [
+        "ref:e29b21fb:/home/wangpeng/test/playground_test/out/foreign-modules/dependencies/firrtl/firrtlCrossModule/generatedAntlr4Source/dest",
+        "ref:1c81c1a8:/home/wangpeng/test/playground_test/out/foreign-modules/dependencies/firrtl/firrtlCrossModule/generatedProtoSources/dest/firrtl",
+        "ref:7cbce33f:/home/wangpeng/test/playground_test/out/foreign-modules/dependencies/firrtl/firrtlCrossModule/generatedBuildInfo/dest"
+    ],
+    "valueHash": -997218732,
+    "inputsHash": -996004298
+}

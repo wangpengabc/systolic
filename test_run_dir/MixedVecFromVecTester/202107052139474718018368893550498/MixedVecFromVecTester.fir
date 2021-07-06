@@ -1,0 +1,45 @@
+;chisel3.BuildInfo$@527a8665
+circuit MixedVecFromVecTester : 
+  module MixedVecFromVecTester : 
+    input clock : Clock
+    input reset : UInt<1>
+    output io : {}
+    
+    wire wire : {2 : UInt<8>, 1 : UInt<8>, 0 : UInt<8>} @[MixedVecSpec.scala 104:18]
+    wire hetVecWire : {2 : UInt<7>, 1 : UInt<6>, 0 : UInt<5>} @[MixedVec.scala 27:26]
+    hetVecWire.0 <= UInt<5>("h014") @[MixedVec.scala 30:9]
+    hetVecWire.1 <= UInt<6>("h028") @[MixedVec.scala 30:9]
+    hetVecWire.2 <= UInt<7>("h050") @[MixedVec.scala 30:9]
+    wire.0 <= hetVecWire.0 @[MixedVec.scala 115:9]
+    wire.1 <= hetVecWire.1 @[MixedVec.scala 115:9]
+    wire.2 <= hetVecWire.2 @[MixedVec.scala 115:9]
+    node _T = eq(wire.0, UInt<5>("h014")) @[MixedVecSpec.scala 107:18]
+    node _T_1 = bits(reset, 0, 0) @[MixedVecSpec.scala 107:9]
+    node _T_2 = or(_T, _T_1) @[MixedVecSpec.scala 107:9]
+    node _T_3 = eq(_T_2, UInt<1>("h00")) @[MixedVecSpec.scala 107:9]
+    when _T_3 : @[MixedVecSpec.scala 107:9]
+      printf(clock, UInt<1>(1), "Assertion failed\n    at MixedVecSpec.scala:107 assert(wire(0) === 20.U)\n") @[MixedVecSpec.scala 107:9]
+      stop(clock, UInt<1>(1), 1) @[MixedVecSpec.scala 107:9]
+      skip @[MixedVecSpec.scala 107:9]
+    node _T_4 = eq(wire.1, UInt<6>("h028")) @[MixedVecSpec.scala 108:18]
+    node _T_5 = bits(reset, 0, 0) @[MixedVecSpec.scala 108:9]
+    node _T_6 = or(_T_4, _T_5) @[MixedVecSpec.scala 108:9]
+    node _T_7 = eq(_T_6, UInt<1>("h00")) @[MixedVecSpec.scala 108:9]
+    when _T_7 : @[MixedVecSpec.scala 108:9]
+      printf(clock, UInt<1>(1), "Assertion failed\n    at MixedVecSpec.scala:108 assert(wire(1) === 40.U)\n") @[MixedVecSpec.scala 108:9]
+      stop(clock, UInt<1>(1), 1) @[MixedVecSpec.scala 108:9]
+      skip @[MixedVecSpec.scala 108:9]
+    node _T_8 = eq(wire.2, UInt<7>("h050")) @[MixedVecSpec.scala 109:18]
+    node _T_9 = bits(reset, 0, 0) @[MixedVecSpec.scala 109:9]
+    node _T_10 = or(_T_8, _T_9) @[MixedVecSpec.scala 109:9]
+    node _T_11 = eq(_T_10, UInt<1>("h00")) @[MixedVecSpec.scala 109:9]
+    when _T_11 : @[MixedVecSpec.scala 109:9]
+      printf(clock, UInt<1>(1), "Assertion failed\n    at MixedVecSpec.scala:109 assert(wire(2) === 80.U)\n") @[MixedVecSpec.scala 109:9]
+      stop(clock, UInt<1>(1), 1) @[MixedVecSpec.scala 109:9]
+      skip @[MixedVecSpec.scala 109:9]
+    node _T_12 = bits(reset, 0, 0) @[MixedVecSpec.scala 111:7]
+    node _T_13 = eq(_T_12, UInt<1>("h00")) @[MixedVecSpec.scala 111:7]
+    when _T_13 : @[MixedVecSpec.scala 111:7]
+      stop(clock, UInt<1>(1), 0) @[MixedVecSpec.scala 111:7]
+      skip @[MixedVecSpec.scala 111:7]
+    

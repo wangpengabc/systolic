@@ -1,0 +1,23 @@
+[
+  {
+    "class":"firrtl.EmitCircuitAnnotation",
+    "emitter":"firrtl.VerilogEmitter"
+  },
+  {
+    "class":"chisel3.experimental.EnumAnnotations$EnumDefAnnotation",
+    "typeName":"chiselTests.BundleLiteralSpec$MyEnum",
+    "definition":{
+      "sA":0,
+      "sB":1
+    }
+  },
+  {
+    "class":"chisel3.experimental.EnumAnnotations$EnumComponentAnnotation",
+    "target":"BundleLiteralSpec_Anon.BundleLiteralSpec_Anon.r_c",
+    "enumTypeName":"chiselTests.BundleLiteralSpec$MyEnum"
+  },
+  {
+    "class":"firrtl.transforms.BlackBoxTargetDirAnno",
+    "targetDir":"/home/wangpeng/test/playground_test/test_run_dir/BundleLiteralSpec_Anon/202107052141594211262898320117571"
+  }
+]

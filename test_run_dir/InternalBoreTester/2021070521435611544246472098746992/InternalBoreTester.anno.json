@@ -1,0 +1,18 @@
+[
+  {
+    "class":"firrtl.EmitCircuitAnnotation",
+    "emitter":"firrtl.VerilogEmitter"
+  },
+  {
+    "class":"firrtl.transforms.NoDedupAnnotation",
+    "target":"~InternalBoreTester|InternalBore"
+  },
+  {
+    "class":"firrtl.transforms.DontTouchAnnotation",
+    "target":"~InternalBoreTester|InternalBore>in"
+  },
+  {
+    "class":"firrtl.transforms.BlackBoxTargetDirAnno",
+    "targetDir":"/home/wangpeng/test/playground_test/test_run_dir/InternalBoreTester/2021070521435611544246472098746992"
+  }
+]

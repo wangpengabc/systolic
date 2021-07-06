@@ -1,0 +1,12 @@
+{
+    "value": [
+        "ref:2b46ab95:/home/wangpeng/test/playground_test/dependencies/chisel3/src/main/scala",
+        "ref:c984eca8:/home/wangpeng/test/playground_test/dependencies/chisel3/src/main/java",
+        "ref:c984eca8:/home/wangpeng/test/playground_test/dependencies/chisel3/src/main/scala-2.12.13",
+        "ref:c984eca8:/home/wangpeng/test/playground_test/dependencies/chisel3/src/main/scala-2.12",
+        "ref:c984eca8:/home/wangpeng/test/playground_test/dependencies/chisel3/src/main/scala-2",
+        "ref:75b70f79:/home/wangpeng/test/playground_test/out/foreign-modules/dependencies/chisel3/chisel3CrossModule/generatedBuildInfo/dest"
+    ],
+    "valueHash": 933087013,
+    "inputsHash": 1758785938
+}

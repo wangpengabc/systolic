@@ -1,0 +1,12 @@
+[submodule "dependencies/chisel3"]
+	path = dependencies/chisel3
+	url = https://github.com/chipsalliance/chisel3.git
+[submodule "dependencies/chisel-testers2"]
+	path = dependencies/chisel-testers2
+	url = https://github.com/ucb-bar/chisel-testers2.git
+[submodule "dependencies/firrtl"]
+	path = dependencies/firrtl
+	url = https://github.com/chipsalliance/firrtl.git
+[submodule "dependencies/treadle"]
+	path = dependencies/treadle
+	url = https://github.com/chipsalliance/treadle.git

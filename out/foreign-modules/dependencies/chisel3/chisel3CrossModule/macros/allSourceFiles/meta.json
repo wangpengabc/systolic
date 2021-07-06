@@ -1,0 +1,11 @@
+{
+    "value": [
+        "ref:a3c4fc8d:/home/wangpeng/test/playground_test/dependencies/chisel3/macros/src/main/scala/chisel3/internal/sourceinfo/SourceInfoTransform.scala",
+        "ref:4e3c3a3c:/home/wangpeng/test/playground_test/dependencies/chisel3/macros/src/main/scala/chisel3/internal/RangeTransform.scala",
+        "ref:ec7d1d29:/home/wangpeng/test/playground_test/dependencies/chisel3/macros/src/main/scala/chisel3/internal/naming/NamingAnnotations.scala",
+        "ref:e24272a6:/home/wangpeng/test/playground_test/dependencies/chisel3/macros/src/main/scala/chisel3/internal/RuntimeDeprecationTransform.scala",
+        "ref:e0ecf73a:/home/wangpeng/test/playground_test/dependencies/chisel3/macros/src/main/scala/chisel3/SourceInfoDoc.scala"
+    ],
+    "valueHash": -1184217253,
+    "inputsHash": -1516615902
+}

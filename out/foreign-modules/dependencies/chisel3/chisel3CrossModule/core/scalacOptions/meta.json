@@ -1,0 +1,15 @@
+{
+    "value": [
+        "-deprecation",
+        "-feature",
+        "-deprecation",
+        "-explaintypes",
+        "-feature",
+        "-language:reflectiveCalls",
+        "-unchecked",
+        "-Xcheckinit",
+        "-Xlint:infer-any"
+    ],
+    "valueHash": -2040666845,
+    "inputsHash": 1095149703
+}

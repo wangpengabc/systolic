@@ -1,0 +1,87 @@
+[0m[[0m[0minfo[0m] [0m[0mcompiling 69 Scala sources to /home/wangpeng/test/playground_test/out/foreign-modules/dependencies/chisel3/chisel3CrossModule/compile/dest/classes ...[0m
+[0m[[0m[33mwarn[0m] [0m[0m/home/wangpeng/test/playground_test/dependencies/chisel3/src/main/scala/chisel3/ChiselExecutionOptions.scala:21:44: trait ComposableOptions in package firrtl is deprecated (since FIRRTL 1.2): Use firrtl.options.HasScoptOptions and/or library/transform registration[0m
+[0m[[0m[33mwarn[0m] [0m[0m                                 ) extends ComposableOptions {[0m
+[0m[[0m[33mwarn[0m] [0m[0m                                           ^[0m
+[0m[[0m[33mwarn[0m] [0m[0m/home/wangpeng/test/playground_test/dependencies/chisel3/src/main/scala/chisel3/ChiselExecutionOptions.scala:30:9: class ExecutionOptionsManager in package firrtl is deprecated (since FIRRTL 1.2): Use new FirrtlStage infrastructure[0m
+[0m[[0m[33mwarn[0m] [0m[0m  self: ExecutionOptionsManager =>[0m
+[0m[[0m[33mwarn[0m] [0m[0m        ^[0m
+[0m[[0m[33mwarn[0m] [0m[0m/home/wangpeng/test/playground_test/dependencies/chisel3/src/main/scala/chisel3/Driver.scala:41:43: trait BackendCompilationUtilities in package util is deprecated (since FIRRTL 1.3): use object BackendCompilationUtilities[0m
+[0m[[0m[33mwarn[0m] [0m[0mtrait BackendCompilationUtilities extends FirrtlBackendCompilationUtilities {[0m
+[0m[[0m[33mwarn[0m] [0m[0m                                          ^[0m
+[0m[[0m[33mwarn[0m] [0m[0m/home/wangpeng/test/playground_test/dependencies/chisel3/src/main/scala/chisel3/Driver.scala:49:30: class ExecutionOptionsManager in package firrtl is deprecated (since FIRRTL 1.2): Use new FirrtlStage infrastructure[0m
+[0m[[0m[33mwarn[0m] [0m[0m    val optionsManager = new ExecutionOptionsManager("chisel3") with HasChiselExecutionOptions with HasFirrtlOptions {[0m
+[0m[[0m[33mwarn[0m] [0m[0m                             ^[0m
+[0m[[0m[33mwarn[0m] [0m[0m/home/wangpeng/test/playground_test/dependencies/chisel3/src/main/scala/chisel3/Driver.scala:49:101: trait HasFirrtlOptions in package firrtl is deprecated (since FIRRTL 1.2): Specify command line arguments in an Annotation mixing in HasScoptOptions[0m
+[0m[[0m[33mwarn[0m] [0m[0m    val optionsManager = new ExecutionOptionsManager("chisel3") with HasChiselExecutionOptions with HasFirrtlOptions {[0m
+[0m[[0m[33mwarn[0m] [0m[0m                                                                                                    ^[0m
+[0m[[0m[33mwarn[0m] [0m[0m/home/wangpeng/test/playground_test/dependencies/chisel3/src/main/scala/chisel3/Driver.scala:50:23: class CommonOptions in package firrtl is deprecated (since FIRRTL 1.2): Use a FirrtlOptionsView, LoggerOptionsView, or construct your own view of an AnnotationSeq[0m
+[0m[[0m[33mwarn[0m] [0m[0m      commonOptions = CommonOptions(topName = prefix, targetDirName = dir.getAbsolutePath)[0m
+[0m[[0m[33mwarn[0m] [0m[0m                      ^[0m
+[0m[[0m[33mwarn[0m] [0m[0m/home/wangpeng/test/playground_test/dependencies/chisel3/src/main/scala/chisel3/Driver.scala:51:23: class FirrtlExecutionOptions in package firrtl is deprecated (since FIRRTL 1.2): Use a FirrtlOptionsView or construct your own view of an AnnotationSeq[0m
+[0m[[0m[33mwarn[0m] [0m[0m      firrtlOptions = FirrtlExecutionOptions(compilerName = "verilog")[0m
+[0m[[0m[33mwarn[0m] [0m[0m                      ^[0m
+[0m[[0m[33mwarn[0m] [0m[0m/home/wangpeng/test/playground_test/dependencies/chisel3/src/main/scala/chisel3/Driver.scala:54:12: object Driver in package firrtl is deprecated (since FIRRTL 1.2): Use firrtl.stage.FirrtlStage[0m
+[0m[[0m[33mwarn[0m] [0m[0m    firrtl.Driver.execute(optionsManager) match {[0m
+[0m[[0m[33mwarn[0m] [0m[0m           ^[0m
+[0m[[0m[33mwarn[0m] [0m[0m/home/wangpeng/test/playground_test/dependencies/chisel3/src/main/scala/chisel3/aop/AspectLibrary.scala:21:11: method newInstance in class Class is deprecated[0m
+[0m[[0m[33mwarn[0m] [0m[0m        x.newInstance()[0m
+[0m[[0m[33mwarn[0m] [0m[0m          ^[0m
+[0m[[0m[33mwarn[0m] [0m[0m/home/wangpeng/test/playground_test/dependencies/chisel3/src/main/scala/chisel3/aop/injecting/InjectingTransform.scala:14:27: class CircuitForm in package firrtl is deprecated (since FIRRTL 1.3): Mix-in the DependencyAPIMigration trait into your Transform and specify its Dependency API dependencies. See: https://bit.ly/2Voppre[0m
+[0m[[0m[33mwarn[0m] [0m[0m  override def inputForm: CircuitForm = ChirrtlForm[0m
+[0m[[0m[33mwarn[0m] [0m[0m                          ^[0m
+[0m[[0m[33mwarn[0m] [0m[0m/home/wangpeng/test/playground_test/dependencies/chisel3/src/main/scala/chisel3/aop/injecting/InjectingTransform.scala:14:41: object ChirrtlForm in package firrtl is deprecated (since FIRRTL 1.3): Mix-in the DependencyAPIMigration trait into your Transform and specify its Dependency API dependencies. See: https://bit.ly/2Voppre[0m
+[0m[[0m[33mwarn[0m] [0m[0m  override def inputForm: CircuitForm = ChirrtlForm[0m
+[0m[[0m[33mwarn[0m] [0m[0m                                        ^[0m
+[0m[[0m[33mwarn[0m] [0m[0m/home/wangpeng/test/playground_test/dependencies/chisel3/src/main/scala/chisel3/aop/injecting/InjectingTransform.scala:15:28: class CircuitForm in package firrtl is deprecated (since FIRRTL 1.3): Mix-in the DependencyAPIMigration trait into your Transform and specify its Dependency API dependencies. See: https://bit.ly/2Voppre[0m
+[0m[[0m[33mwarn[0m] [0m[0m  override def outputForm: CircuitForm = ChirrtlForm[0m
+[0m[[0m[33mwarn[0m] [0m[0m                           ^[0m
+[0m[[0m[33mwarn[0m] [0m[0m/home/wangpeng/test/playground_test/dependencies/chisel3/src/main/scala/chisel3/aop/injecting/InjectingTransform.scala:15:42: object ChirrtlForm in package firrtl is deprecated (since FIRRTL 1.3): Mix-in the DependencyAPIMigration trait into your Transform and specify its Dependency API dependencies. See: https://bit.ly/2Voppre[0m
+[0m[[0m[33mwarn[0m] [0m[0m  override def outputForm: CircuitForm = ChirrtlForm[0m
+[0m[[0m[33mwarn[0m] [0m[0m                                         ^[0m
+[0m[[0m[33mwarn[0m] [0m[0m/home/wangpeng/test/playground_test/dependencies/chisel3/src/main/scala/chisel3/compatibility.scala:365:50: trait BackendCompilationUtilities in package util is deprecated (since FIRRTL 1.3): use object BackendCompilationUtilities[0m
+[0m[[0m[33mwarn[0m] [0m[0m  type BackendCompilationUtilities = firrtl.util.BackendCompilationUtilities[0m
+[0m[[0m[33mwarn[0m] [0m[0m                                                 ^[0m
+[0m[[0m[33mwarn[0m] [0m[0m/home/wangpeng/test/playground_test/dependencies/chisel3/src/main/scala/chisel3/compatibility.scala:477:12: method override_reset_= in class Module is deprecated (since Chisel 3.5): Use withClock at Module instantiation[0m
+[0m[[0m[33mwarn[0m] [0m[0m      this.override_reset = override_reset[0m
+[0m[[0m[33mwarn[0m] [0m[0m           ^[0m
+[0m[[0m[33mwarn[0m] [0m[0m/home/wangpeng/test/playground_test/dependencies/chisel3/src/main/scala/chisel3/compatibility.scala:482:12: method override_reset_= in class Module is deprecated (since Chisel 3.5): Use withClock at Module instantiation[0m
+[0m[[0m[33mwarn[0m] [0m[0m      this.override_reset = Some(_reset)[0m
+[0m[[0m[33mwarn[0m] [0m[0m           ^[0m
+[0m[[0m[33mwarn[0m] [0m[0m/home/wangpeng/test/playground_test/dependencies/chisel3/src/main/scala/chisel3/stage/ChiselAnnotations.scala:72:63: method newInstance in class Class is deprecated[0m
+[0m[[0m[33mwarn[0m] [0m[0m      Class.forName(name).asInstanceOf[Class[_ <: RawModule]].newInstance()[0m
+[0m[[0m[33mwarn[0m] [0m[0m                                                              ^[0m
+[0m[[0m[33mwarn[0m] [0m[0m/home/wangpeng/test/playground_test/dependencies/chisel3/src/main/scala/chisel3/stage/package.scala:28:70: trait ChiselExecutionResult in package chisel3 is deprecated (since Chisel3 3.4): This will be removed in Chisel 3.5[0m
+[0m[[0m[33mwarn[0m] [0m[0m  private[chisel3] implicit object ChiselExecutionResultView extends OptionsView[ChiselExecutionResult] {[0m
+[0m[[0m[33mwarn[0m] [0m[0m                                                                     ^[0m
+[0m[[0m[33mwarn[0m] [0m[0m/home/wangpeng/test/playground_test/dependencies/chisel3/src/main/scala/chisel3/stage/package.scala:30:39: trait ChiselExecutionResult in package chisel3 is deprecated (since Chisel3 3.4): This will be removed in Chisel 3.5[0m
+[0m[[0m[33mwarn[0m] [0m[0m    def view(options: AnnotationSeq): ChiselExecutionResult = {[0m
+[0m[[0m[33mwarn[0m] [0m[0m                                      ^[0m
+[0m[[0m[33mwarn[0m] [0m[0m/home/wangpeng/test/playground_test/dependencies/chisel3/src/main/scala/chisel3/stage/package.scala:44:61: method firrtlResultView in object DriverCompatibility is deprecated (since 1.2): FirrtlExecutionResult is deprecated as part of the Stage/Phase refactor. Migrate to FirrtlStage.[0m
+[0m[[0m[33mwarn[0m] [0m[0m      val fResult = firrtl.stage.phases.DriverCompatibility.firrtlResultView(options)[0m
+[0m[[0m[33mwarn[0m] [0m[0m                                                            ^[0m
+[0m[[0m[33mwarn[0m] [0m[0m/home/wangpeng/test/playground_test/dependencies/chisel3/src/main/scala/chisel3/stage/package.scala:47:36: class ChiselExecutionFailure in package chisel3 is deprecated (since Chisel 3.4): This will be removed in Chisel 3.5[0m
+[0m[[0m[33mwarn[0m] [0m[0m        case (None, _)          => ChiselExecutionFailure("Failed to elaborate Chisel circuit")[0m
+[0m[[0m[33mwarn[0m] [0m[0m                                   ^[0m
+[0m[[0m[33mwarn[0m] [0m[0m/home/wangpeng/test/playground_test/dependencies/chisel3/src/main/scala/chisel3/stage/package.scala:48:36: class ChiselExecutionFailure in package chisel3 is deprecated (since Chisel 3.4): This will be removed in Chisel 3.5[0m
+[0m[[0m[33mwarn[0m] [0m[0m        case (Some(_), None)    => ChiselExecutionFailure("Failed to convert Chisel circuit to FIRRTL")[0m
+[0m[[0m[33mwarn[0m] [0m[0m                                   ^[0m
+[0m[[0m[33mwarn[0m] [0m[0m/home/wangpeng/test/playground_test/dependencies/chisel3/src/main/scala/chisel3/stage/package.scala:49:36: class ChiselExecutionSuccess in package chisel3 is deprecated (since Chisel 3.4): This will be removed in Chisel 3.5[0m
+[0m[[0m[33mwarn[0m] [0m[0m        case (Some(a), Some(b)) => ChiselExecutionSuccess( Some(a), b, Some(fResult))[0m
+[0m[[0m[33mwarn[0m] [0m[0m                                   ^[0m
+[0m[[0m[33mwarn[0m] [0m[0m/home/wangpeng/test/playground_test/dependencies/chisel3/src/main/scala/chisel3/stage/phases/Convert.scala:41:75: method newInstance in class Class is deprecated[0m
+[0m[[0m[33mwarn[0m] [0m[0m        .map { c: Class[_ <: Transform] => RunFirrtlTransformAnnotation(c.newInstance()) }[0m
+[0m[[0m[33mwarn[0m] [0m[0m                                                                          ^[0m
+[0m[[0m[33mwarn[0m] [0m[0m/home/wangpeng/test/playground_test/dependencies/chisel3/src/main/scala/chisel3/util/experimental/LoadMemoryTransform.scala:207:18: class CircuitForm in package firrtl is deprecated (since FIRRTL 1.3): Mix-in the DependencyAPIMigration trait into your Transform and specify its Dependency API dependencies. See: https://bit.ly/2Voppre[0m
+[0m[[0m[33mwarn[0m] [0m[0m  def inputForm: CircuitForm  = LowForm[0m
+[0m[[0m[33mwarn[0m] [0m[0m                 ^[0m
+[0m[[0m[33mwarn[0m] [0m[0m/home/wangpeng/test/playground_test/dependencies/chisel3/src/main/scala/chisel3/util/experimental/LoadMemoryTransform.scala:207:33: object LowForm in package firrtl is deprecated (since FIRRTL 1.3): Mix-in the DependencyAPIMigration trait into your Transform and specify its Dependency API dependencies. See: https://bit.ly/2Voppre[0m
+[0m[[0m[33mwarn[0m] [0m[0m  def inputForm: CircuitForm  = LowForm[0m
+[0m[[0m[33mwarn[0m] [0m[0m                                ^[0m
+[0m[[0m[33mwarn[0m] [0m[0m/home/wangpeng/test/playground_test/dependencies/chisel3/src/main/scala/chisel3/util/experimental/LoadMemoryTransform.scala:208:19: class CircuitForm in package firrtl is deprecated (since FIRRTL 1.3): Mix-in the DependencyAPIMigration trait into your Transform and specify its Dependency API dependencies. See: https://bit.ly/2Voppre[0m
+[0m[[0m[33mwarn[0m] [0m[0m  def outputForm: CircuitForm = LowForm[0m
+[0m[[0m[33mwarn[0m] [0m[0m                  ^[0m
+[0m[[0m[33mwarn[0m] [0m[0m/home/wangpeng/test/playground_test/dependencies/chisel3/src/main/scala/chisel3/util/experimental/LoadMemoryTransform.scala:208:33: object LowForm in package firrtl is deprecated (since FIRRTL 1.3): Mix-in the DependencyAPIMigration trait into your Transform and specify its Dependency API dependencies. See: https://bit.ly/2Voppre[0m
+[0m[[0m[33mwarn[0m] [0m[0m  def outputForm: CircuitForm = LowForm[0m
+[0m[[0m[33mwarn[0m] [0m[0m                                ^[0m
+[0m[[0m[33mwarn[0m] [0m[0m28 warnings found[0m
+[0m[[0m[0minfo[0m] [0m[0mdone compiling[0m

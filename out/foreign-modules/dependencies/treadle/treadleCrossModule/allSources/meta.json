@@ -1,0 +1,9 @@
+{
+    "value": [
+        "ref:cb54d43b:/home/wangpeng/test/playground_test/dependencies/treadle/src/main/scala",
+        "ref:c984eca8:/home/wangpeng/test/playground_test/dependencies/treadle/src/main/java",
+        "ref:d695901a:/home/wangpeng/test/playground_test/out/foreign-modules/dependencies/treadle/treadleCrossModule/generatedBuildInfo/dest"
+    ],
+    "valueHash": -633588813,
+    "inputsHash": 1529948304
+}

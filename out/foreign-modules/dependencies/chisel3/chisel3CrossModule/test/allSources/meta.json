@@ -1,0 +1,11 @@
+{
+    "value": [
+        "ref:2c983c81:/home/wangpeng/test/playground_test/dependencies/chisel3/src/test/scala",
+        "ref:c984eca8:/home/wangpeng/test/playground_test/dependencies/chisel3/src/test/java",
+        "ref:c984eca8:/home/wangpeng/test/playground_test/dependencies/chisel3/src/test/scala-2.12.13",
+        "ref:c984eca8:/home/wangpeng/test/playground_test/dependencies/chisel3/src/test/scala-2.12",
+        "ref:c984eca8:/home/wangpeng/test/playground_test/dependencies/chisel3/src/test/scala-2"
+    ],
+    "valueHash": 1868728428,
+    "inputsHash": 237520426
+}

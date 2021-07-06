@@ -1,0 +1,9 @@
+{
+    "value": {
+        "buildInfoPackage": "firrtl",
+        "version": "1.5-SNAPSHOT",
+        "scalaVersion": "2.12.13"
+    },
+    "valueHash": 479095089,
+    "inputsHash": 401139898
+}

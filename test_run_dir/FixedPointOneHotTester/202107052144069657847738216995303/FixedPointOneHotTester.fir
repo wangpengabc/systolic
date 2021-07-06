@@ -1,0 +1,45 @@
+;chisel3.BuildInfo$@527a8665
+circuit FixedPointOneHotTester : 
+  module FixedPointOneHotTester : 
+    input clock : Clock
+    input reset : UInt<1>
+    output io : {}
+    
+    wire out : Fixed<8><<4>> @[OneHotMuxSpec.scala 86:17]
+    wire _out_WIRE : Fixed<8><<3>> @[Mux.scala 27:72]
+    wire _out_WIRE_1 : Fixed<8><<3>> @[Mux.scala 27:72]
+    wire _out_WIRE_2 : Fixed<8><<3>> @[Mux.scala 27:72]
+    wire _out_WIRE_3 : Fixed<8><<3>> @[Mux.scala 27:72]
+    _out_WIRE <= asFixedPoint(UInt<3>("h05"), 1) @[Mux.scala 27:72]
+    _out_WIRE_1 <= asFixedPoint(UInt<5>("h017"), 2) @[Mux.scala 27:72]
+    _out_WIRE_2 <= asFixedPoint(UInt<7>("h05f"), 3) @[Mux.scala 27:72]
+    _out_WIRE_3 <= asFixedPoint(UInt<8>("h0a3"), 3) @[Mux.scala 27:72]
+    node _out_T = asUInt(_out_WIRE) @[Mux.scala 27:72]
+    node _out_T_1 = mux(UInt<1>("h00"), _out_T, UInt<1>("h00")) @[Mux.scala 27:72]
+    node _out_T_2 = asUInt(_out_WIRE_1) @[Mux.scala 27:72]
+    node _out_T_3 = mux(UInt<1>("h01"), _out_T_2, UInt<1>("h00")) @[Mux.scala 27:72]
+    node _out_T_4 = asUInt(_out_WIRE_2) @[Mux.scala 27:72]
+    node _out_T_5 = mux(UInt<1>("h00"), _out_T_4, UInt<1>("h00")) @[Mux.scala 27:72]
+    node _out_T_6 = asUInt(_out_WIRE_3) @[Mux.scala 27:72]
+    node _out_T_7 = mux(UInt<1>("h00"), _out_T_6, UInt<1>("h00")) @[Mux.scala 27:72]
+    node _out_T_8 = or(_out_T_1, _out_T_3) @[Mux.scala 27:72]
+    node _out_T_9 = or(_out_T_8, _out_T_5) @[Mux.scala 27:72]
+    node _out_T_10 = or(_out_T_9, _out_T_7) @[Mux.scala 27:72]
+    wire _out_WIRE_4 : Fixed<8><<3>> @[Mux.scala 27:72]
+    node _out_T_11 = asFixedPoint(_out_T_10, 3) @[Mux.scala 27:72]
+    _out_WIRE_4 <= _out_T_11 @[Mux.scala 27:72]
+    out <= _out_WIRE_4 @[OneHotMuxSpec.scala 88:7]
+    node _T = eq(out, asFixedPoint(UInt<7>("h05c"), 4)) @[OneHotMuxSpec.scala 95:14]
+    node _T_1 = bits(reset, 0, 0) @[OneHotMuxSpec.scala 95:9]
+    node _T_2 = or(_T, _T_1) @[OneHotMuxSpec.scala 95:9]
+    node _T_3 = eq(_T_2, UInt<1>("h00")) @[OneHotMuxSpec.scala 95:9]
+    when _T_3 : @[OneHotMuxSpec.scala 95:9]
+      printf(clock, UInt<1>(1), "Assertion failed\n    at OneHotMuxSpec.scala:95 assert(out === (-2.25).F(4.BP))\n") @[OneHotMuxSpec.scala 95:9]
+      stop(clock, UInt<1>(1), 1) @[OneHotMuxSpec.scala 95:9]
+      skip @[OneHotMuxSpec.scala 95:9]
+    node _T_4 = bits(reset, 0, 0) @[OneHotMuxSpec.scala 97:7]
+    node _T_5 = eq(_T_4, UInt<1>("h00")) @[OneHotMuxSpec.scala 97:7]
+    when _T_5 : @[OneHotMuxSpec.scala 97:7]
+      stop(clock, UInt<1>(1), 0) @[OneHotMuxSpec.scala 97:7]
+      skip @[OneHotMuxSpec.scala 97:7]
+    

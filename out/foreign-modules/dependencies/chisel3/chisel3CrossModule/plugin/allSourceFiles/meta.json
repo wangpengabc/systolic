@@ -1,0 +1,9 @@
+{
+    "value": [
+        "ref:30759e7c:/home/wangpeng/test/playground_test/dependencies/chisel3/plugin/src/main/scala/chisel3/internal/plugin/ChiselComponent.scala",
+        "ref:50b8bad9:/home/wangpeng/test/playground_test/dependencies/chisel3/plugin/src/main/scala/chisel3/internal/plugin/BundleComponent.scala",
+        "ref:42f5c4d7:/home/wangpeng/test/playground_test/dependencies/chisel3/plugin/src/main/scala/chisel3/internal/plugin/ChiselPlugin.scala"
+    ],
+    "valueHash": -360903697,
+    "inputsHash": 2063638477
+}
