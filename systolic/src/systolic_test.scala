@@ -1,60 +1,7 @@
-package systolic
+//package systolic
 
 import chisel3._
 import chisel3.util._
-
-class WSPE(id: Int, dim: Int, m: Int, n: Int, width: Int) extends Module {
-  val io = IO(new Bundle {
-    val in_stage_cycle = Input(UInt(10.W))
-    val out_stage_cycle = Output(UInt(10.W))
-    val in_a = Input(Valid(UInt((m*width).W)))
-    val in_b = Input(Valid(UInt((n*width).W)))
-    val in_c = Input(Valid(UInt((m*n*width).W)))
-    val out_c = Output(Valid(UInt((m*n*width).W)))
-    val out_a = Output(Valid(UInt((m*width).W)))
-    val out_b = Output(Valid(UInt((n*width).W)))
-  })
-
-  val stage_cycle = RegInit(1.U(10.W))
-  val reg_b = RegInit(0.U.asTypeOf(Valid(UInt((n*width).W))))
-  val reg_c = RegInit(0.U.asTypeOf(Valid(UInt((m*n*width).W))))
-  val pe = Module(new ComputeCell(m, n, width)).io
-  val trans_a = RegInit(0.U.asTypeOf(Valid(UInt((m*width).W))))
-  val stat_a = RegInit(0.U.asTypeOf(Valid(UInt((m*width).W))))
-  val exec_cycle = RegInit(0.U(10.W))
-  val input_cycle = RegInit(0.U(10.W))
-  val input_a_valid = RegInit(false.B)
-  input_a_valid := io.in_a.valid
-  exec_cycle:=Mux(exec_cycle+(io.in_b.valid)===stage_cycle, 0.U, exec_cycle+(io.in_b.valid))
-  // 对于input，照单全收，由整体的controller控制
-  // 对于filter，第0个PE收dim个，留最后一个，其余的传出去
-  // 第dim-1个PE收1个，其余的不要
-  when(input_cycle < (dim-id).asUInt && io.in_a.valid){
-    trans_a.bits := io.in_a.bits
-    trans_a.valid := io.in_a.valid
-  }
-  // 一直更新
-  when(io.in_a.valid){
-    input_cycle := Mux(input_cycle===(dim-1).asUInt,0.U, input_cycle+1.U)
-  }
-  when(exec_cycle===0.U){
-    stat_a := trans_a
-  }
-
-  pe.in_a := stat_a.bits
-  pe.in_b := reg_b.bits
-  reg_b := io.in_b
-  reg_c := io.in_c
-  io.out_c.bits := pe.out_c
-  io.out_c.valid := reg_c.valid && reg_b.valid
-  pe.in_c := reg_c.bits
-  io.out_b:= reg_b
-  io.out_a.bits := trans_a.bits
-  io.out_a.valid := input_a_valid
-  stage_cycle := io.in_stage_cycle
-  io.out_stage_cycle := stage_cycle
-
-}
 
 // ----------------------8----------------8------------------16-----------------16-------------------8------------------------8-----------------------8-------------4------------32------------16-----------16-------
 class WSSystolic_Test(in_channel: Int, out_channel: Int, in_slot_num: Int, ker_slot_num: Int, cycle_read_kernel: Int, cycle_read_input: Int, cycle_out_res: Int, max_ks: Int, max_w: Int, batch: Int, width: Int) extends Module {

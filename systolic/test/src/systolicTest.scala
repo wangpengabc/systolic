@@ -1,19 +1,20 @@
+//package systolic.test
+
 import chisel3._
 import chiseltest._
-import org.scalatest.{FlatSpec, Matchers}
-import systolic.WSSystolic_Test
+import chisel3.util._
+import org.scalatest._
+import org.scalatest.flatspec._
+import org.scalatest.matchers.should._
 
-//import chisel3.tester._
-//import chisel3.experimental.BundleLiterals._
-//
-//import utest._
 
 //object GCDSpec extends ChiselUtestTester {
 //  val tests = Tests {
 //    test("GCD") {
 //      testCircuit(new WSSystolic_Test(in_channel = 8, out_channel = 8, in_slot_num = 16, ker_slot_num = 16, cycle_read_kernel = 8, cycle_read_input = 8, cycle_out_res = 8, max_ks = 4, max_w = 32, batch = 16, width = 16)) { c =>
 
-class systolicTest extends FlatSpec with ChiselScalatestTester with Matchers {
+//class systolicTest extends FlatSpec with ChiselScalatestTester with Matchers {
+class systolicTest extends AnyFlatSpec with ChiselScalatestTester with Matchers {
   it should "test WSSystolic_Test" in {
     test(new WSSystolic_Test(in_channel=8, out_channel=8, in_slot_num=16, ker_slot_num=16, cycle_read_kernel=8, cycle_read_input=8, cycle_out_res=8, max_ks=4, max_w=32, batch=16, width=16)){c=>
 
@@ -197,8 +198,8 @@ class systolicTest extends FlatSpec with ChiselScalatestTester with Matchers {
         }
       }
     }
-  }
 }
+
 
 //object systolicTest extends App {
 //  (new systolicTest).execute()
