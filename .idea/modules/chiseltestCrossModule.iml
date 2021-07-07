@@ -13,8 +13,8 @@
     <content url="file://$MODULE_DIR$/../../dependencies/chisel-testers2/src/main/scala-2" />
     <content url="file://$MODULE_DIR$/../../dependencies/chisel-testers2/src/main/scala-2.12" />
     <content url="file://$MODULE_DIR$/../../dependencies/chisel-testers2/src/main/scala-2.12.13" />
-    <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="jdk" jdkName="11" jdkType="JavaSDK" />
     <orderEntry type="module" module-name="chisel3CrossModule" exported="" />
     <orderEntry type="module" module-name="treadleCrossModule" exported="" />
     <orderEntry type="module-library">

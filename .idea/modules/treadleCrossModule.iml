@@ -13,8 +13,8 @@
     <content url="file://$MODULE_DIR$/../../out/foreign-modules/dependencies/treadle/treadleCrossModule/generatedBuildInfo/dest">
       <sourceFolder url="file://$MODULE_DIR$/../../out/foreign-modules/dependencies/treadle/treadleCrossModule/generatedBuildInfo/dest" isTestSource="false" generated="true" />
     </content>
-    <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="jdk" jdkName="11" jdkType="JavaSDK" />
     <orderEntry type="module" module-name="firrtlCrossModule" exported="" />
     <orderEntry type="module-library">
       <library name="BSP: scala-sdk-2.12.13" type="Scala">

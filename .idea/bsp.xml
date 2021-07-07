@@ -9,7 +9,7 @@
             <option value="$PROJECT_DIR$" />
           </set>
         </option>
-        <option name="serverConfig" value="BspConfigFile:/home/wangpeng/test/playground_test/.bsp/mill.json" />
+        <option name="serverConfig" value="BspConfigFile:/home/wangpeng/riscv/chisel/systolic/systolic_chisel_sources/.bsp/mill.json" />
         <option name="preImportConfig" value="NoPreImport" />
       </BspProjectSettings>
     </option>

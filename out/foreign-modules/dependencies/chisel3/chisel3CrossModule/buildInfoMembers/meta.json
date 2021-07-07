@@ -1,9 +1,0 @@
-{
-    "value": {
-        "buildInfoPackage": "chisel3",
-        "version": "3.5-SNAPSHOT",
-        "scalaVersion": "2.12.13"
-    },
-    "valueHash": -901416198,
-    "inputsHash": -2136172687
-}

@@ -1,8 +1,0 @@
-{
-    "value": [
-        "ref:ce346a90:/home/wangpeng/test/playground_test/dependencies/treadle/src/main/resources",
-        "ref:58561c71:/home/wangpeng/test/playground_test/out/foreign-modules/dependencies/treadle/treadleCrossModule/compile/dest/classes"
-    ],
-    "valueHash": 1992048000,
-    "inputsHash": 550323632
-}

@@ -23,6 +23,8 @@ object ivys {
 trait CommonModule extends ScalaModule {
   override def scalaVersion = ivys.sv
 
+  override def scalacOptions = Seq("-Xsource:2.11")
+
   override def scalacPluginClasspath = super.scalacPluginClasspath() ++ Agg(
     mychisel3.plugin.jar()
   )
@@ -75,8 +77,12 @@ object systolic extends CommonModule {
   // use scalatest as your test framework
   object test extends Tests with TestModule.ScalaTest {
     override def ivyDeps = Agg(
-      ivys.scalatest
+      ivys.scalatest,
+      ivy"edu.berkeley.cs::chisel-iotesters:1.5.3",
     )
+    override def testFrameworks = T {
+      Seq("org.scalatest.tools.Framework")
+    }
     override def moduleDeps = super.moduleDeps ++ Seq(mychiseltest)
   }
 }

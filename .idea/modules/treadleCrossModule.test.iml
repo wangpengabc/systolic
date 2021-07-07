@@ -10,8 +10,8 @@
     <content url="file://$MODULE_DIR$/../../dependencies/treadle/src/test/scala">
       <sourceFolder url="file://$MODULE_DIR$/../../dependencies/treadle/src/test/scala" isTestSource="true" />
     </content>
-    <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="jdk" jdkName="11" jdkType="JavaSDK" />
     <orderEntry type="module" module-name="treadleCrossModule" exported="" scope="TEST" />
     <orderEntry type="module-library">
       <library name="BSP: scala-sdk-2.12.13" type="Scala">

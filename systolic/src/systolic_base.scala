@@ -1,42 +1,44 @@
+package systolic
+
 import chisel3._
 import chisel3.util._
 
 
-class WSPE(id: Int, dim: Int, m: Int, n: Int, width: Int) extends Module {
+
+class WSPE(id: Int, dim: Int, m: Int, n: Int, width: Int) extends Module{
   val io = IO(new Bundle {
     val in_stage_cycle = Input(UInt(10.W))
     val out_stage_cycle = Output(UInt(10.W))
-    val in_a = Input(Valid(UInt((m * width).W)))
-    val in_b = Input(Valid(UInt((n * width).W)))
-    val in_c = Input(Valid(UInt((m * n * width).W)))
-    val out_c = Output(Valid(UInt((m * n * width).W)))
-    val out_a = Output(Valid(UInt((m * width).W)))
-    val out_b = Output(Valid(UInt((n * width).W)))
+    val in_a = Input(Valid(UInt((m*width).W)))
+    val in_b = Input(Valid(UInt((n*width).W)))
+    val in_c = Input(Valid(UInt((m*n*width).W)))
+    val out_c = Output(Valid(UInt((m*n*width).W)))
+    val out_a = Output(Valid(UInt((m*width).W)))
+    val out_b = Output(Valid(UInt((n*width).W)))
   })
-
   val stage_cycle = RegInit(1.U(10.W))
-  val reg_b = RegInit(0.U.asTypeOf(Valid(UInt((n * width).W))))
-  val reg_c = RegInit(0.U.asTypeOf(Valid(UInt((m * n * width).W))))
+  val reg_b = RegInit(0.U.asTypeOf(Valid(UInt((n*width).W))))
+  val reg_c = RegInit(0.U.asTypeOf(Valid(UInt((m*n*width).W))))
   val pe = Module(new ComputeCell(m, n, width)).io
-  val trans_a = RegInit(0.U.asTypeOf(Valid(UInt((m * width).W))))
-  val stat_a = RegInit(0.U.asTypeOf(Valid(UInt((m * width).W))))
+  val trans_a = RegInit(0.U.asTypeOf(Valid(UInt((m*width).W))))
+  val stat_a = RegInit(0.U.asTypeOf(Valid(UInt((m*width).W))))
   val exec_cycle = RegInit(0.U(10.W))
   val input_cycle = RegInit(0.U(10.W))
   val input_a_valid = RegInit(false.B)
   input_a_valid := io.in_a.valid
-  exec_cycle := Mux(exec_cycle + (io.in_b.valid) === stage_cycle, 0.U, exec_cycle + (io.in_b.valid))
+  exec_cycle:=Mux(exec_cycle+(io.in_b.valid)===stage_cycle, 0.U, exec_cycle+(io.in_b.valid))
   // 对于input，照单全收，由整体的controller控制
   // 对于filter，第0个PE收dim个，留最后一个，其余的传出去
   // 第dim-1个PE收1个，其余的不要
-  when(input_cycle < (dim - id).asUInt && io.in_a.valid) {
+  when(input_cycle < (dim-id).asUInt && io.in_a.valid){
     trans_a.bits := io.in_a.bits
     trans_a.valid := io.in_a.valid
   }
   // 一直更新
-  when(io.in_a.valid) {
-    input_cycle := Mux(input_cycle === (dim - 1).asUInt, 0.U, input_cycle + 1.U)
+  when(io.in_a.valid){
+    input_cycle := Mux(input_cycle===(dim-1).asUInt,0.U, input_cycle+1.U)
   }
-  when(exec_cycle === 0.U) {
+  when(exec_cycle===0.U){
     stat_a := trans_a
   }
 
@@ -47,17 +49,16 @@ class WSPE(id: Int, dim: Int, m: Int, n: Int, width: Int) extends Module {
   io.out_c.bits := pe.out_c
   io.out_c.valid := reg_c.valid && reg_b.valid
   pe.in_c := reg_c.bits
-  io.out_b := reg_b
+  io.out_b:= reg_b
   io.out_a.bits := trans_a.bits
   io.out_a.valid := input_a_valid
   stage_cycle := io.in_stage_cycle
   io.out_stage_cycle := stage_cycle
-
 }
 
+class ram_sdp_1024x256 extends Module{
+  val io = IO(new Bundle(){
 
-class ram_sdp_1024x256 extends Module {
-  val io = IO(new Bundle() {
     val wr_en = Input(Bool())
     val wr_addr = Input(UInt(10.W))
     val wr_data = Input(UInt(256.W))
@@ -66,13 +67,10 @@ class ram_sdp_1024x256 extends Module {
     val rd_addr = Input(UInt(10.W))
     val rd_data = Output(UInt(256.W))
   })
-
   val buf = SyncReadMem(1024, UInt(256.W))
-
-  when(io.wr_en) {
+  when(io.wr_en){
     buf.write(io.wr_addr, io.wr_data)
   }
-
   io.rd_data := buf.read(io.rd_addr)
 }
 
@@ -93,7 +91,6 @@ class ram_sdp_1024x16 extends Module{
   }
   io.rd_data := buf.read(io.rd_addr)
 }
-
 class ConvConfig extends Bundle{
   val in_w = UInt(10.W)
   val ks = UInt(10.W)
@@ -123,21 +120,23 @@ class ConvInst extends Bundle{
   val output_id = UInt(5.W)
   val free = UInt(3.W) //free 的作用是什么？
 }
-
-class InstDispatcher extends Module {
-  val io = IO(new Bundle() {
+class InstDispatcher extends Module{
+  val io = IO(new Bundle{
     val inst = DeqIO(new RoCCInstruction())
-    val wr_input = EnqIO(new BufIDInst)
-    val wr_filter = EnqIO(new BufIDInst)
-    val conv_exec = EnqIO(new ConvInst)
-    val rd_output = EnqIO(new BufIDInst)
-    val config = Output(new ConvConfig)
+    val wr_input = EnqIO(new BufIDInst()) // ? 连接 In_Input 模块的In_inst
+    val wr_filter = EnqIO(new BufIDInst()) // ? 连接 In_Kernel 模块的In_inst，那么 In_inst 和 Out_inst 的作用又分别是什么呢？
+    val conv_exec = EnqIO(new ConvInst()) //作用？ 参考WSSystolic_Test 的part1部分，conv_exec的各个input_id,filter_id, output_id 分别和其他模块的out_inst或者in_inst相连
+    //val rd_input = EnqIO(new BufIDInst())
+    //val rd_filter = EnqIO(new BufIDInst())
+    //val wr_output = EnqIO(new BufIDInst())
+    val rd_output = EnqIO(new BufIDInst())
+    val config = Output(new ConvConfig())
+    // val wr_input_valid = Output(Bool())
   })
-
   val config_ks =   RegInit(0.U(10.W))
   val config_pad =  RegInit(0.U(10.W))
   val config_out_w =  RegInit(1.U(10.W))
-  val wr_input_q = Module(new Queue(new BufIDInst, 10)).io
+  val wr_input_q =  Module(new Queue(new BufIDInst(), 10)).io
   val wr_filter_q = Module(new Queue(new BufIDInst(), 10)).io
   val conv_q =  Module(new Queue(new ConvInst(), 10)).io //作用？？, conv_exec？
   val rd_output_q = Module(new Queue(new BufIDInst(), 10)).io //作用？？
@@ -146,12 +145,11 @@ class InstDispatcher extends Module {
   val out_en = RegInit(VecInit(Seq.fill(32)(false.B)))
   val conv_pre_input_id = RegInit(0.U(10.W)) // 这又是干什么？
   val conv_pre_filter_id = RegInit(0.U(10.W))
-//  config ks pad out_w
+  io.config.stride := 1.U
   io.config.in_w := config_out_w + config_ks - 1.U
   io.config.ks := config_ks
   io.config.out_w := config_out_w
-  io.config.stride := 1.U
-  io.inst.ready := wr_input_q.enq.ready && wr_filter_q.enq.ready && conv_q.enq.ready && rd_output_q.enq.ready // 当所有的都是queue都是空的时候
+  io.inst.ready := wr_input_q.enq.ready && wr_filter_q.enq.ready && conv_q.enq.ready && rd_output_q.enq.ready // ??
 
   //以下是从队列中读取指令，并发送给加速器
   // (1) 指令队列中有指令，且input_en满足条件
@@ -170,7 +168,6 @@ class InstDispatcher extends Module {
   when(io.wr_filter.ready){
     filter_en(io.wr_filter.bits.id):=true.B
   }
-
   // input_en
   // out_en为false时，才可以写output
   io.conv_exec.valid :=
@@ -193,7 +190,7 @@ class InstDispatcher extends Module {
     input_en(conv_q.deq.bits.output_id):=false.B
   }
 
-  // out_en 为true时，才可以输出 // out_en又是什么作用呢
+  // out_en 为true时，才可以输出 // out_en又是什么作用呢, rd_output is used to store the result???
   io.rd_output.valid := rd_output_q.deq.valid && (out_en(rd_output_q.deq.bits.id))
   io.rd_output.bits := rd_output_q.deq.bits
   rd_output_q.deq.ready := io.rd_output.ready
@@ -241,7 +238,7 @@ class InstDispatcher extends Module {
       conv_q.enq.bits.input_id := Mux(funct===5.U, rs1, 0.U)
       conv_q.enq.bits.filter_id := Mux(funct===6.U, rs1, 0.U)
       conv_q.enq.bits.output_id := Mux(funct===7.U, rs1, 0.U)
-      // 5->4, 6->2, 7->1
+      // 5->4 / b'100, 6->2 / b'010, 7->1 / b'001
       conv_q.enq.bits.free := Mux(funct===5.U, 4.U, Mux(funct===6.U, 2.U, Mux(funct===7.U, 1.U, 0.U)))
     }
     /*
@@ -276,12 +273,12 @@ class InstDispatcher extends Module {
     rd_output_q.enq.valid := false.B
     rd_output_q.enq.bits.id := 0.U
   }
-}
 
+}
 // Layout = NHWC
 // ------------------8---------------16--------------32-------------8--------------16*16-----
-class WSSysIn_Input(pe_num: Int, slot_num: Int, slot_size: Int, cycle_read: Int, width: Int) extends Module {
-  val io = IO(new Bundle {
+class WSSysIn_Input(pe_num: Int, slot_num: Int, slot_size: Int, cycle_read: Int, width: Int) extends Module{
+  val io=IO(new Bundle{
     val in_inst = DeqIO(new BufIDInst())
     val out_inst = DeqIO(new BufIDInst())
     val config = Input(new ConvConfig())
@@ -289,6 +286,10 @@ class WSSysIn_Input(pe_num: Int, slot_num: Int, slot_size: Int, cycle_read: Int,
     val data_in = DeqIO(Vec(pe_num, Valid(UInt(width.W))))
     val data_out = EnqIO(Vec(pe_num, Valid(UInt(width.W))))
   })
+//  printf is a method in chisel3
+//  println is a method in scala framework, so println just works when elaborating circuits
+//  but wont work while simulation
+//  printf(p"WSSysIn_Input: IO.in_inst is $io \n")
 
   // input: 1024 * 256
   val buf_bank = for(i <- 0 until pe_num) yield{
@@ -298,14 +299,13 @@ class WSSysIn_Input(pe_num: Int, slot_num: Int, slot_size: Int, cycle_read: Int,
   val in_addr = RegInit(VecInit(Seq.fill(pe_num)(0.U(10.W))))  //每行中的写地址
   val out_addr = RegInit(VecInit(Seq.fill(pe_num)(0.U(10.W))))
   val can_out = RegInit(VecInit(Seq.fill(pe_num+1)(false.B)))
-
   //输出的条件是：有这条指令，并且systolic array允许输入数据
+
   val out_kh = RegInit(VecInit(Seq.fill(pe_num)(0.U(4.W))))
   val out_kw = RegInit(VecInit(Seq.fill(pe_num)(0.U(4.W))))
   val out_slot = RegInit(VecInit(Seq.fill(pe_num)(0.U(4.W))))
   // 暂时不用ready来控制buffer输出，全部由整体的控制器来控制
   // 但依然要控制buffer输入，ready表示输入完毕
-  //io.in_inst.ready := true.B
   can_out(0) := io.out_inst.valid && io.data_out.ready
   out_slot(0) := io.out_inst.bits.id
   io.out_inst.ready := true.B
@@ -370,10 +370,10 @@ class WSSysIn_Input(pe_num: Int, slot_num: Int, slot_size: Int, cycle_read: Int,
   io.data_out.valid := true.B
 
 }
-
 // kernel的input buf， bank=output channel
 // ---------------------8--------------------8-------------16------------4*4*8------------8---------------16----
 class WSSysIn_Kernel(in_channel: Int, out_channel: Int, slot_num: Int, slot_size: Int, cycle_read: Int, width: Int) extends Module{
+
   val io=IO(new Bundle{
     val in_inst = DeqIO(new BufIDInst())
     val out_inst = DeqIO(new BufIDInst())
@@ -523,6 +523,7 @@ class Update_Result(out_channel: Int, slot_num: Int, slot_size: Int, cycle_write
   io.data_out.valid := io.out_inst.valid
   io.out_inst.ready := (out_addr===io.config.out_w - 1.U)
 }
+
 
 class ComputeCell(m: Int, n: Int, width: Int) extends Module {
   val io = IO(new Bundle {

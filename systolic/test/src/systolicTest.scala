@@ -1,11 +1,16 @@
-//package systolic.test
+package systolic
 
 import chisel3._
-import chiseltest._
-import chisel3.util._
-import org.scalatest._
+//import chiseltest._
 import org.scalatest.flatspec._
 import org.scalatest.matchers.should._
+import chisel3.tester._
+import chisel3.tester.RawTester.test
+
+import chiseltest.experimental.TestOptionBuilder._
+import chiseltest.internal.WriteVcdAnnotation
+
+import scala.math.pow
 
 
 //object GCDSpec extends ChiselUtestTester {
@@ -13,10 +18,64 @@ import org.scalatest.matchers.should._
 //    test("GCD") {
 //      testCircuit(new WSSystolic_Test(in_channel = 8, out_channel = 8, in_slot_num = 16, ker_slot_num = 16, cycle_read_kernel = 8, cycle_read_input = 8, cycle_out_res = 8, max_ks = 4, max_w = 32, batch = 16, width = 16)) { c =>
 
+// run with mill -i systolic.test.test
 //class systolicTest extends FlatSpec with ChiselScalatestTester with Matchers {
 class systolicTest extends AnyFlatSpec with ChiselScalatestTester with Matchers {
+  it should "test WSSysIn_Input" in {
+    test(new WSSysIn_Input(8, 16, 32, 8, 256)).withAnnotations(Seq(WriteVcdAnnotation)){ c=>
+      c.io.config.in_w.poke(14.U)
+      c.io.config.out_w.poke(12.U)
+      c.io.config.ks.poke(3.U)
+      c.io.config.stride.poke(1.U)
+
+      c.clock.step(5)
+
+    }
+  }
+
+//  it should "test ram_sdp_1024x256" in {
+//    test(new ram_sdp_1024x256){ c=>
+////      reset
+//      c.reset.poke(false.B)
+//      c.clock.step(1)
+//      c.reset.poke(true.B)
+////      begin test
+//      var wr_addr = 0.U(10.W)
+//      var rd_addr = 0.U(10.W)
+//      var wr_data = 0.U(256.W)
+//      var rd_data = 0.U(256.W)
+//      var wr_en = Bool()
+//      val rand = scala.util.Random
+//
+//      val addr_bound = pow(2, 10)
+//
+//      for (i <- 0 until 100) {
+//        wr_addr = (rand.nextInt(1024)).U
+//        wr_data = (rand.nextInt(0xffffff)).U
+//        c.io.wr_addr.poke(wr_addr)
+//        c.io.wr_data.poke(wr_data)
+//        c.io.wr_en.poke(true.B)
+//
+//        Console.print(c.io.rd_addr.peek(), '\n')
+//        c.io.rd_addr.poke(wr_addr)
+//        Console.print(c.io.rd_addr.peek(), '\n')
+//
+//        c.clock.step(1)
+//
+////        c.io.wr_en.poke(false.B)
+////        c.clock.step(1)
+//
+//
+//        c.io.rd_data.expect(wr_data)
+//
+//      }
+//
+//    }
+//  }
+
   it should "test WSSystolic_Test" in {
-    test(new WSSystolic_Test(in_channel=8, out_channel=8, in_slot_num=16, ker_slot_num=16, cycle_read_kernel=8, cycle_read_input=8, cycle_out_res=8, max_ks=4, max_w=32, batch=16, width=16)){c=>
+    test(new WSSystolic_Test(in_channel=8, out_channel=8, in_slot_num=16, ker_slot_num=16, cycle_read_kernel=8,
+      cycle_read_input=8, cycle_out_res=8, max_ks=4, max_w=32, batch=16, width=16)).withAnnotations(Seq(WriteVcdAnnotation)){c=>
 
         val cycle_read_input = 8
         val cycle_read_kernel = 8
@@ -150,12 +209,15 @@ class systolicTest extends AnyFlatSpec with ChiselScalatestTester with Matchers 
             for (k <- 0 until cycle_read_input) {
               // h c w
               c.io.b_in.bits(k).poke(1.U)
+              Console.print("c.ids:", c.ids.peek())
             }
             idx_input = idx_input + 1
           }
           if ((c.io.a_in.ready.peek()) == 1) {
             for (k <- 0 until cycle_read_kernel) {
               c.io.a_in.bits(k).poke((idx_filter / 8 + 1).U)
+              Console.print("c.ids:", c.ids.peek())
+
             }
             idx_filter = idx_filter + 1
           }
@@ -180,6 +242,9 @@ class systolicTest extends AnyFlatSpec with ChiselScalatestTester with Matchers 
           print("num_cycle:", num_cycle)
           print(c.io.c_out.bits.peek(), c.io.c_out.valid.peek())
           println()
+//          Console.print("c.ids:", c.ids.inst.valid.peek())
+          println(c.ids.inst)
+
         }
         for (i <- 0 until 240) {
           for (k <- 0 until cycle_read_input) {

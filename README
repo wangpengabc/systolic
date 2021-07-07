@@ -1,0 +1,12 @@
+# commands running in terminal
+
+## generate verilog
+## thie command will run systolic/src/Elaborate.scala file, where exists an App-based object to genenrate verliog
+mill -i systolic
+
+## test with chisel
+## which will run systolic/test/src/systolicTest.scala
+## if you want to generate vcd file, you can use withAnnotations suffix with test method
+## the output vcd file is in test_run_dir
+mill -i systolic.test.test
+

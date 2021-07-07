@@ -1,8 +1,0 @@
-{
-    "value": [
-        "ref:2f417dec:/home/wangpeng/test/playground_test/dependencies/chisel3/plugin/src/main/resources",
-        "ref:42bb6d5a:/home/wangpeng/test/playground_test/out/foreign-modules/dependencies/chisel3/chisel3CrossModule/plugin/compile/dest/classes"
-    ],
-    "valueHash": 1063981404,
-    "inputsHash": -608627316
-}

@@ -1,9 +1,0 @@
-{
-    "value": {
-        "buildInfoPackage": "treadle",
-        "version": "1.5-SNAPSHOT",
-        "scalaVersion": "2.12.13"
-    },
-    "valueHash": -596563922,
-    "inputsHash": 1080714535
-}

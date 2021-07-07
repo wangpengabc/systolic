@@ -22,8 +22,8 @@
     <content url="file://$MODULE_DIR$/../../out/foreign-modules/dependencies/firrtl/firrtlCrossModule/generatedProtoSources/dest/firrtl">
       <sourceFolder url="file://$MODULE_DIR$/../../out/foreign-modules/dependencies/firrtl/firrtlCrossModule/generatedProtoSources/dest/firrtl" isTestSource="false" generated="true" />
     </content>
-    <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="jdk" jdkName="11" jdkType="JavaSDK" />
     <orderEntry type="module-library">
       <library name="BSP: firrtlCrossModule dependencies">
         <CLASSES>
